@@ -11,16 +11,14 @@ declare(strict_types=1);
  */
 namespace App\Controller;
 
+use App\JsonRpc\Calculator2ServiceInterface;
+use App\JsonRpc\CalculatorServiceInterface;
+
 class IndexController extends Controller
 {
     public function index()
     {
-        $user = $this->request->input('user', 'Hyperf');
-        $method = $this->request->getMethod();
-        return $this->response->success([
-            'user' => $user,
-            'method' => $method,
-            'message' => 'Hello Hyperf.',
-        ]);
+        // return di()->get(CalculatorServiceInterface::class)->incr('test');
+        return di()->get(Calculator2ServiceInterface::class)->incr('test2');
     }
 }

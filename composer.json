@@ -34,11 +34,14 @@
         "hyperf/framework": "2.1.*",
         "hyperf/guzzle": "2.1.*",
         "hyperf/http-server": "2.1.*",
+        "hyperf/json-rpc": "^2.1",
         "hyperf/logger": "2.1.*",
         "hyperf/model-cache": "2.1.*",
         "hyperf/pool": "2.1.*",
         "hyperf/process": "2.1.*",
         "hyperf/redis": "2.1.*",
+        "hyperf/rpc-multiplex-incubator": "dev-main",
+        "multiplex/socket": "dev-main as v0.1.0",
         "hyperf/server": "2.1.*",
         "hyperf/utils": "2.1.*"
     },
@@ -82,11 +85,5 @@
         "cs-fix": "php-cs-fixer fix $1",
         "start": "php ./bin/hyperf.php start",
         "test": "co-phpunit -c phpunit.xml --colors=always"
-    },
-    "repositories": {
-        "packagist": {
-            "type": "composer",
-            "url": "https://mirrors.aliyun.com/composer"
-        }
     }
 }
