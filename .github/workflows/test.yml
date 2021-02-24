@@ -39,6 +39,8 @@ jobs:
           sudo make install
       - name: Setup Packages
         run: composer update -o
+      - name: Run Server
+        run: php bin/hyperf.php start &
       - name: Run Test Cases
         run: |
           composer analyse

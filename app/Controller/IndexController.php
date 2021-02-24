@@ -18,7 +18,9 @@ class IndexController extends Controller
 {
     public function index()
     {
-        // return di()->get(CalculatorServiceInterface::class)->incr('test');
-        return di()->get(Calculator2ServiceInterface::class)->incr('test2');
+        // $res = di()->get(CalculatorServiceInterface::class)->incr('test');
+        $res = di()->get(Calculator2ServiceInterface::class)->incr('test2');
+
+        return $this->response->success($res);
     }
 }

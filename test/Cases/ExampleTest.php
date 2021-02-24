@@ -11,13 +11,8 @@ declare(strict_types=1);
  */
 namespace HyperfTest\Cases;
 
-use App\Kernel\Context\Coroutine;
-use App\Kernel\Log\AppendRequestIdProcessor;
-use Hyperf\Engine\Channel;
-use Hyperf\HttpMessage\Server\Request;
-use Hyperf\Utils\Context;
+use Hyperf\Redis\Redis;
 use HyperfTest\HttpTestCase;
-use Psr\Http\Message\ServerRequestInterface;
 
 /**
  * @internal
@@ -27,6 +22,11 @@ class ExampleTest extends HttpTestCase
 {
     public function testExample()
     {
-        $this->assertTrue(true);
+        $ret = $this->get('/');
+        $this->assertSame(0, $ret['code']);
+        $this->assertSame(
+            (int) di()->get(Redis::class)->get('test2'),
+            $ret['data']
+        );
     }
 }
