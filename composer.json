@@ -41,7 +41,6 @@
         "hyperf/process": "2.1.*",
         "hyperf/redis": "2.1.*",
         "hyperf/rpc-multiplex-incubator": "dev-main",
-        "multiplex/socket": "dev-main as v0.1.0",
         "hyperf/server": "2.1.*",
         "hyperf/utils": "2.1.*"
     },
